@@ -3,15 +3,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import HomePage from "./pages/home/HomePage";
-import { RouterProvider } from "react-router-dom";
-import router from "./routes/Router";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Header />
-      <HomePage />
+      <Outlet />
       <Footer />
     </>
   );

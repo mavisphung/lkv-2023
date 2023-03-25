@@ -18,7 +18,6 @@ const HomePage = () => {
       <h1>Hwllo eowlrds</h1>
       <h1>Hwllo eowlrds</h1>
       
-      <p>Welcome to LKV</p>
       
     </Container>
   );

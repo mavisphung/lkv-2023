@@ -1,7 +1,8 @@
 
 const AppRoutes = {
   error: "*",
-  home: "/",
+  root: "/",
+  home: "/home",
   about: "/about",
   categories: "/categories",
   services: "/services"

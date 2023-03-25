@@ -1,11 +1,14 @@
-import { Container } from "@mui/material";
+import "./Footer.css";
+import { Fragment } from "react";
+import { Container, Divider } from "@mui/material";
 
 const Footer = () => {
-
   return (
-    <Container maxWidth="lg">
-    </Container>
-  )
-}
+    <Fragment>
+      <Divider />
+      <h1>This is footer</h1>
+    </Fragment>
+  );
+};
 
 export default Footer;

@@ -26,7 +26,7 @@ const MyDrawer = () => {
     <React.Fragment>
       <Drawer open={isOpen} onClose={(ev, reason) => setIsOpen(false)}>
         <List>
-          {/* Trang chủ */}
+          {/* --------- Home --------- */}
           <ListItem disableGutters>
             <ListItemButton
               selected={index === 0}
@@ -42,7 +42,7 @@ const MyDrawer = () => {
               </ListItemText>
             </ListItemButton>
           </ListItem>
-          {/* Giới thiệu */}
+          {/* --------- About --------- */}
           <ListItem disableGutters>
             <ListItemButton
               selected={index === 1}
@@ -52,7 +52,39 @@ const MyDrawer = () => {
                 <HomeIcon />
               </ListItemIcon>
               <ListItemText sx={{ textDecoration: "none" }}>
-                <Link to={AppRoutes.home}>
+                <Link to={AppRoutes.about}>
+                  <Typography>Giới thiệu</Typography>
+                </Link>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+          {/* --------- Services --------- */}
+          <ListItem disableGutters>
+            <ListItemButton
+              selected={index === 1}
+              onClick={(ev) => handleClick(ev, 1)}
+            >
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText sx={{ textDecoration: "none" }}>
+                <Link to={AppRoutes.services}>
+                  <Typography>Dịch vụ</Typography>
+                </Link>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+          {/* --------- Categories --------- */}
+          <ListItem disableGutters>
+            <ListItemButton
+              selected={index === 1}
+              onClick={(ev) => handleClick(ev, 1)}
+            >
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText sx={{ textDecoration: "none" }}>
+                <Link to={AppRoutes.categories}>
                   <Typography>Giới thiệu</Typography>
                 </Link>
               </ListItemText>
@@ -60,7 +92,7 @@ const MyDrawer = () => {
           </ListItem>
         </List>
       </Drawer>
-      <IconButton onClick={() => setIsOpen(!isOpen)}>
+      <IconButton sx={{ marginLeft: "auto" }} onClick={() => setIsOpen(!isOpen)}>
         <MenuIcon />
       </IconButton>
     </React.Fragment>

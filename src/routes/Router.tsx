@@ -1,22 +1,43 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Routes from "./Routes";
-import App from '../App';
 import ErrorPage from '../pages/error/ErrorPage';
-import AboutPage from '../pages/about/About';
+import AboutPage from '../pages/about/AboutPage';
+import HomePage from '../pages/home/HomePage';
+import App from '../App';
+import { CategoriesPage } from '../pages/categories/CategoriesPage';
+import { ServicesPage } from '../pages/services/ServicesPage';
 
 const router = createBrowserRouter([
   {
-    path: Routes.home,
+    path: '',
     element: <App />,
-  },
-  {
-    path: Routes.about,
-    element: <AboutPage />,
-  },
-  {
-    path: Routes.error,
-    element: <ErrorPage />,
-  },
+    children: [
+      {
+        path: Routes.root,
+        element: <HomePage />,
+      },
+      {
+        path: Routes.home,
+        element: <HomePage />,
+      },
+      {
+        path: Routes.about,
+        element: <AboutPage />,
+      },
+      {
+        path: Routes.services,
+        element: <ServicesPage />,
+      },
+      {
+        path: Routes.categories,
+        element: <CategoriesPage />,
+      },
+      {
+        path: Routes.error,
+        element: <ErrorPage />,
+      },
+    ],
+  }
 ]);
 
 export default router;
