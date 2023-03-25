@@ -17,6 +17,7 @@ const HomePage = () => {
       <h1>Hwllo eowlrds</h1>
       <h1>Hwllo eowlrds</h1>
       <h1>Hwllo eowlrds</h1>
+      <p>Thẻ p</p>
       
       
     </Container>

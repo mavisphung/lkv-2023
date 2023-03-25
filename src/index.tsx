@@ -5,6 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import router from './routes/Router';
 
+// import fonts globally
+import "./fonts/inter/Inter-Regular.ttf";
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
