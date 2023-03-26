@@ -1,26 +1,25 @@
 import React from "react";
-import { Container } from "@mui/material";
 import "./HomePage.css";
+import { Center, Container } from "@mantine/core";
 
 const HomePage = () => {
   return (
-    <Container maxWidth="lg">
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <h1>Hwllo eowlrds</h1>
-      <p>Thẻ p</p>
-      
-      
-    </Container>
+    <>
+      <Container fluid>
+        <div
+          style={{
+            width: "100%",
+            height: "500px",
+            backgroundColor: "red",
+          }}
+        >
+          <Center children={<h1>Dataaa</h1>} />
+        </div>
+      </Container>
+      <Container size="xl">
+        <h1>hello world</h1>
+      </Container>
+    </>
   );
 };
 

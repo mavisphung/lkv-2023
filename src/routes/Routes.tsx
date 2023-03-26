@@ -5,7 +5,8 @@ const AppRoutes = {
   home: "/home",
   about: "/about",
   categories: "/categories",
-  services: "/services"
+  services: "/services",
+  contact: "/contact",
 }
 
 export default AppRoutes;
