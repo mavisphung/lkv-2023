@@ -7,21 +7,6 @@ import { TabElement } from "../../shared/types";
 import { Container, Tabs } from "@mantine/core";
 
 const Header = () => {
-  const navigate = useNavigate();
-  const [currentTab, setCurrentTab] = React.useState<string>(AppRoutes.home);
-
-  // hàm xử lí chọn tab
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    event.preventDefault();
-    setCurrentTab(newValue);
-    navigate(newValue);
-  };
-
-  const handleOnClickIcon = (event: React.MouseEvent) => {
-    event.preventDefault();
-    setCurrentTab(AppRoutes.home);
-    navigate(AppRoutes.root);
-  };
 
   function a11yProps(index: number) {
     return {
@@ -41,7 +26,7 @@ const Header = () => {
     <>
       <React.Fragment>
         <Container size="xl">
-          <Tabs defaultValue={AppRoutes.root}>
+          <Tabs defaultValue={AppRoutes.home}>
             <Tabs.List>
               {desktopTabs.map((el, idx) => (
                 <Link to={el.route} {...a11yProps(idx)}>
