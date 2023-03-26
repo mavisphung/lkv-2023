@@ -44,7 +44,7 @@ const Header = () => {
           <Tabs defaultValue={AppRoutes.root}>
             <Tabs.List>
               {desktopTabs.map((el, idx) => (
-                <Link to={el.route}>
+                <Link to={el.route} {...a11yProps(idx)}>
                   <Tabs.Tab value={el.route}>{el.name}</Tabs.Tab>
                 </Link>
               ))}
