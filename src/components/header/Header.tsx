@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./Header.css";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AppRoutes from "../../routes/Routes";
 import { myTabs } from "../../shared";
 import { TabElement } from "../../shared/types";
