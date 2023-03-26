@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
+import { MantineProvider } from '@mantine/core';
 import router from './routes/Router';
 
 // import fonts globally
-import "./fonts/inter/Inter-Regular.ttf";
+import "./assets/fonts/inter/Inter-Regular.ttf";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +15,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
     <RouterProvider router={router} />
+    </MantineProvider>
   </React.StrictMode>
 );
 

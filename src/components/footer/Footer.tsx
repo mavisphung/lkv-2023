@@ -1,13 +1,14 @@
+import { Container } from "@mantine/core";
 import "./Footer.css";
-import { Fragment } from "react";
-import { Container, Divider } from "@mui/material";
+import * as React from "react";
 
 const Footer = () => {
   return (
-    <Fragment>
-      <Divider />
-      <h1>This is footer</h1>
-    </Fragment>
+    <React.Fragment>
+      <Container size="xl">
+        <h1>This is footer</h1>
+      </Container>
+    </React.Fragment>
   );
 };
 
