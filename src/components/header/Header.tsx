@@ -58,6 +58,9 @@ const useStyles = createStyles((theme) => ({
       //   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
       color: theme.colors.blue,
     },
+    [theme.fn.smallerThan("sm")]: {
+      textAlign: "end",
+    },
   },
   linkActive: {
     //   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
@@ -75,6 +78,13 @@ const useStyles = createStyles((theme) => ({
     color: theme.colors.gray[7],
     fontSize: theme.fontSizes.sm,
     fontWeight: 600,
+
+    [theme.fn.smallerThan("sm")]: {
+      textAlign: "center"
+    },
+    [theme.fn.largerThan("sm")]: {
+      marginLeft: "auto"
+    },
   },
   icon: {
     color: theme.colors.gray[7],
@@ -88,7 +98,7 @@ const useStyles = createStyles((theme) => ({
     "&:not([data-disabled]):hover": {
       backgroundColor: "transparent",
     },
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
   dropdown: {
     position: "absolute",
@@ -122,36 +132,40 @@ export function Header() {
   const desktopTabs: TabElement[] = myTabs.slice(0, -1);
   const [active, setActive] = useState<string>(desktopTabs[0].route);
 
-  const headerComponents = desktopTabs.map((el, idx) => (
-    <Link
-      className={cx(classes.link, {
-        [classes.linkActive]: active === el.route,
-      })}
-      to={el.route}
-      {...a11yProps(idx)}
-      onClick={(e) => {
-        // e.preventDefault();
-        setActive(el.route);
-        close();
-      }}
-    >
-      {el.name}
-    </Link>
-  ));
+  const headerComponents = (
+    <>
+      {desktopTabs.map((el, idx) => (
+        <Link
+          className={cx(classes.link, {
+            [classes.linkActive]: active === el.route,
+          })}
+          to={el.route}
+          {...a11yProps(idx)}
+          onClick={(e) => {
+            // e.preventDefault();
+            setActive(el.route);
+            close();
+          }}
+        >
+          {el.name}
+        </Link>
+      ))}
+      <h5 className={classes.contact}>Liên hệ: 0908 779 519</h5>
+    </>
+  );
 
   // bắt kích thước của màn hình từ md trở xuống
   // < md (ipad) thì true
   // sm là màn hình của điện thoại iphone
   return (
     <MantineHeader height={56} mb={120}>
-      <Container>
+      <Container size="xl">
         <div className={classes.inner}>
           <h3 className={classes.logo}>LKV</h3>
           <Group spacing={5} className={classes.links}>
             {headerComponents}
           </Group>
-          
-          <h5 className={classes.contact}>Liên hệ: 0908 779 519</h5>
+
           <Button
             className={classes.btn}
             rightIcon={
