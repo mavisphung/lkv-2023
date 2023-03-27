@@ -2,15 +2,14 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Footer from "./components/footer/Footer";
-// import Header from "./components/header/Header";
 import { Outlet } from "react-router-dom";
-import { AppShell, Navbar } from "@mantine/core";
-import { HeaderMenu } from "./components/header/Header-2";
+import { AppShell } from "@mantine/core";
+import { Header } from "./components/header/Header";
 
 function App() {
   return (
     <AppShell
-      header={<HeaderMenu />}
+      header={<Header />}
       footer={<Footer />}
       styles={(theme) => ({
         main: {
