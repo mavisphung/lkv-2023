@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <MantineProvider withGlobalStyles withNormalizeCSS>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </MantineProvider>
   </React.StrictMode>
 );
