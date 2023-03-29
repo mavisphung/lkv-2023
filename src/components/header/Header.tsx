@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { myTabs } from "../../shared";
 import { TabElement } from "../../shared/types";
 
-const HEADER_HEIGHT = rem(60);
+const HEADER_HEIGHT = rem(56);
 
 const useStyles = createStyles((theme) => ({
   inner: {
