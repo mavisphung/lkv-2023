@@ -2,15 +2,67 @@ import React from "react";
 import "./HomePage.css";
 import { Center, Container } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const HomePage = () => {
+  const autoplay = React.useRef(Autoplay({ delay: 10 * 1000, jump: true }));
   return (
     <>
-      <Container fluid>
-        <Carousel maw={320} mx="auto" withIndicators height={200}>
-          <Carousel.Slide>1</Carousel.Slide>
-          <Carousel.Slide>2</Carousel.Slide>
-          <Carousel.Slide>3</Carousel.Slide>
+      <Container size="xl">
+        <Carousel
+          mx="auto"
+          withControls={false}
+          loop={true}
+          plugins={[autoplay.current]}
+        >
+          <Carousel.Slide
+            sx={{
+              backgroundColor: "black",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "560px",
+              }}
+              about="asdas"
+            >
+              ádasdadsda
+            </div>
+          </Carousel.Slide>
+          <Carousel.Slide
+            sx={{
+              backgroundColor: "yellow",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "560px",
+              }}
+              about="asdas"
+            >
+              This is a sketch
+            </div>
+          </Carousel.Slide>
+          <Carousel.Slide
+            sx={{
+              backgroundColor: "red",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "560px",
+              }}
+              about="asdas"
+            >
+              This is a sketch
+            </div>
+          </Carousel.Slide>
           {/* ...other slides */}
         </Carousel>
       </Container>

@@ -80,10 +80,10 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 600,
 
     [theme.fn.smallerThan("sm")]: {
-      textAlign: "center"
+      textAlign: "center",
     },
     [theme.fn.largerThan("sm")]: {
-      marginLeft: "auto"
+      marginLeft: "auto",
     },
   },
   icon: {
