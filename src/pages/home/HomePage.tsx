@@ -62,6 +62,11 @@ const useStyles = createStyles((theme) => ({
       color: "white",
     },
   },
+  categories: {
+    [theme.fn.smallerThan("sm")]: {
+      padding: "2.5rem 0",
+    },
+  },
 }));
 
 const cards: MyCardItem[] = [
@@ -153,7 +158,7 @@ const HomePage = () => {
 
       {/* Introduction section */}
       <Container ta="center" size="xl" className={classes.intro}>
-        <SectionHeading isCenter={true} content="Chúng tôi là ai"/>
+        <SectionHeading isCenter={true} content="Chúng tôi là ai" />
         <Text component="p">
           LKV vừa là cơ sở sản xuất, vừa là nhà phân phối sỉ lẻ chuyên các loại
           sản phẩm dành cho máy lạnh như eke máy lạnh (giá đỡ cục nóng) các loại
@@ -167,17 +172,26 @@ const HomePage = () => {
         </NavLink>
       </Container>
 
-      {/* Cards */}
-      <Container size="xl" px="xl">
+      {/* Categories */}
+      <Container size="xl" px="xl" className={classes.categories}>
         <SectionHeading isCenter={true} content="Danh mục sản phẩm" />
         <Grid>
           {cards.map((el, index) => (
-            <Grid.Col key={el.title + index} offsetMd={index === 0 ? 1.5 : 0} xs={12} sm={4} md={3}>
+            // <Grid.Col key={el.title + index} offsetMd={index === 0 ? 2.25 : 0} xs={12} sm={4} md={2.5}>
+            <Grid.Col
+              key={el.title + index}
+              offsetMd={index === 0 ? 1.5 : 0}
+              offsetLg={index === 0 ? 2.25 : 0}
+              xs={12}
+              sm={4}
+              md={3}
+              lg={2.5}
+            >
               <Card withBorder>
                 {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
                 Vì nó không có padding/margin */}
                 <Card.Section>
-                  <Image src={el.url} height={rem(120)}/>
+                  <Image src={el.url} height={rem(120)} />
                 </Card.Section>
                 {/* <Group position="apart">
                   <span>đay là bên trái</span>
@@ -185,7 +199,9 @@ const HomePage = () => {
                 </Group>
                 <Text>Thời gian ơi xin hãy, làm tuyết rơi</Text>
                 <Text>Xin lỗi cơn mưa vừa qua</Text> */}
-                <Text fz="md" fw="bold">{el.title}</Text>
+                <Text fz="md" fw="bold">
+                  {el.title}
+                </Text>
                 <Text>{el.description}</Text>
               </Card>
             </Grid.Col>
