@@ -37,11 +37,10 @@ const useStyles = createStyles((theme) => ({
       fontSize: "1rem",
     },
   },
-  // intro
-  intro: {
-    padding: "5rem 0",
+  container__py: {
+    padding: "4rem 0 0 0",
     [theme.fn.smallerThan("md")]: {
-      padding: "2.5rem 0",
+      padding: "2.5rem 0 0 0",
     },
     "p": {
       padding: `0 ${rem(150)}`,
@@ -64,12 +63,24 @@ const useStyles = createStyles((theme) => ({
   },
   categories: {
     [theme.fn.smallerThan("sm")]: {
-      padding: "2.5rem 0",
+      padding: "2.5rem 0 0 0",
     },
   },
+  hot_product__item: {
+    transition: "all .8s ease",
+    "&:hover": {
+      transform: "rotateY(180deg)",
+    },
+  },
+  back__side: {
+    transform: "rotateY(180deg)"
+  },
+  front__side: {
+    transform: "rotateY(180deg)",
+  }
 }));
 
-const cards: MyCardItem[] = [
+const categories: CategoryItem[] = [
   {
     url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/img0151-155.JPG",
     title: "Eke máy lạnh",
@@ -157,7 +168,7 @@ const HomePage = () => {
       </Container>
 
       {/* Introduction section */}
-      <Container ta="center" size="xl" className={classes.intro}>
+      <Container ta="center" size="xl" className={classes.container__py}>
         <SectionHeading isCenter={true} content="Chúng tôi là ai" />
         <Text component="p">
           LKV vừa là cơ sở sản xuất, vừa là nhà phân phối sỉ lẻ chuyên các loại
@@ -173,10 +184,10 @@ const HomePage = () => {
       </Container>
 
       {/* Categories */}
-      <Container size="xl" px="xl" className={classes.categories}>
+      <Container size="xl" className={classes.container__py}>
         <SectionHeading isCenter={true} content="Danh mục sản phẩm" />
         <Grid>
-          {cards.map((el, index) => (
+          {categories.map((el, index) => (
             // <Grid.Col key={el.title + index} offsetMd={index === 0 ? 2.25 : 0} xs={12} sm={4} md={2.5}>
             <Grid.Col
               key={el.title + index}
@@ -208,13 +219,98 @@ const HomePage = () => {
           ))}
         </Grid>
       </Container>
+
+      {/* Hot products */}
+      <Container size="xl" className={classes.container__py}>
+        <SectionHeading isCenter={true} content="Sản phẩm bán chạy" />
+        <Grid>
+          <Grid.Col
+            xs={12}
+            sm={4}
+            md={3}
+            lg={2.5}
+          >
+            <Card className={`${classes.hot_product__item}`} withBorder>
+              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
+                Vì nó không có padding/margin */}
+              <Card.Section>
+                {/* <Image src={el.url} height={rem(120)} /> */}
+              </Card.Section>
+              <Text fz="md" fw="bold">
+                Eke máy lạnh 1HP
+              </Text>
+              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
+            </Card>
+          </Grid.Col>
+
+          <Grid.Col
+            xs={12}
+            sm={4}
+            md={3}
+            lg={2.5}
+          >
+            <Card className={`${classes.hot_product__item}`} withBorder>
+              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
+                Vì nó không có padding/margin */}
+              <Card.Section>
+                {/* <Image src={el.url} height={rem(120)} /> */}
+              </Card.Section>
+              <Text fz="md" fw="bold">
+                Eke máy lạnh 1HP
+              </Text>
+              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
+            </Card>
+          </Grid.Col>
+
+          <Grid.Col
+            xs={12}
+            sm={4}
+            md={3}
+            lg={2.5}
+            className={`${classes.hot_product__item}`}
+            sx={{
+              position: "relative"
+            }}
+          >
+            {/* Front side */}
+            <Card className={classes.front__side} withBorder sx={{
+              position: "absolute",
+            }}>
+              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
+                Vì nó không có padding/margin */}
+              <Card.Section>
+                {/* <Image src={el.url} height={rem(120)} /> */}
+              </Card.Section>
+              <Text fz="md" fw="bold">
+                Eke máy lạnh 1HP
+              </Text>
+              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
+            </Card>
+            {/* TODO: Complete the back side */}
+            {/* Back side */}
+            <Card className={classes.back__side} withBorder sx={{
+              position: "absolute",
+            }}>
+              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
+                Vì nó không có padding/margin */}
+              <Card.Section>
+                {/* <Image src={el.url} height={rem(120)} /> */}
+              </Card.Section>
+              <Text fz="md" fw="bold">
+                Eke máy lạnh 1HP
+              </Text>
+              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
+            </Card>
+          </Grid.Col>
+        </Grid>
+      </Container>
     </>
   );
 };
 
 export default HomePage;
 
-type MyCardItem = {
+type CategoryItem = {
   url: string;
   title: string;
   description: string;
