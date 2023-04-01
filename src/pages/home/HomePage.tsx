@@ -66,26 +66,22 @@ const useStyles = createStyles((theme) => ({
   },
   card_side__back: {
     ref: getStylesRef("card_side__back"),
-    backgroundColor: "green",
     transform: "rotateY(180deg)",
   },
   card_side__front: {
     ref: getStylesRef("card_side__front"),
-    backgroundColor: "yellow",
   },
   card_side: {
     ref: getStylesRef("card_side"),
     transition: "all .8s ease",
     width: "auto",
-    top: 0,
-    left: 0,
+    height: "100%",
     backfaceVisibility: "hidden",
     gridArea: "1 / 1 / 1 / 1",
   },
   card: {
     width: "100%",
     height: "100%",
-    backgroundColor: "red",
     display: "grid",
     gridTemplateColumns: "100%",
     gridTemplateRows: "100%",
@@ -244,7 +240,10 @@ const HomePage = () => {
         <Grid>
           <Grid.Col xs={12} sm={4} md={3} lg={2.5} className={classes.card}>
             {/* Front side */}
-            <Card withBorder className={`${classes.card_side} ${classes.card_side__front}`}>
+            <Card
+              withBorder
+              className={`${classes.card_side} ${classes.card_side__front}`}
+            >
               <Group position="apart" mt="md" mb="xs">
                 <Text weight={500}>Norway Fjord Adventures</Text>
               </Group>
@@ -257,7 +256,10 @@ const HomePage = () => {
             </Card>
 
             {/* Back side */}
-            <Card withBorder className={`${classes.card_side} ${classes.card_side__back}`}>
+            <Card
+              withBorder
+              className={`${classes.card_side} ${classes.card_side__back}`}
+            >
               <Group position="apart" mt="md" mb="xs">
                 <Text weight={500}>Hello world</Text>
               </Group>
@@ -266,6 +268,7 @@ const HomePage = () => {
                 With Fjord Tours you can explore more of the magical fjord
                 landscapes
               </Text>
+              <Button>Liên hệ</Button>
             </Card>
           </Grid.Col>
         </Grid>
