@@ -238,39 +238,42 @@ const HomePage = () => {
       <Container size="xl" className={classes.container__py}>
         <SectionHeading isCenter={true} content="Sản phẩm bán chạy" />
         <Grid>
-          <Grid.Col xs={12} sm={4} md={3} lg={2.5} className={classes.card}>
-            {/* Front side */}
-            <Card
-              withBorder
-              className={`${classes.card_side} ${classes.card_side__front}`}
-            >
-              <Group position="apart" mt="md" mb="xs">
-                <Text weight={500}>Norway Fjord Adventures</Text>
-              </Group>
+          {[...Array(10)].map((el, index) => (
+            // Card col
+            <Grid.Col xs={12} sm={4} md={3} lg={2.5} xl={2.4} className={classes.card}>
+              {/* Front side */}
+              <Card
+                withBorder
+                className={`${classes.card_side} ${classes.card_side__front}`}
+              >
+                <Group position="apart" mt="md" mb="xs">
+                  <Text weight={500}>Norway Fjord Adventures</Text>
+                </Group>
 
-              <Text size="sm" color="dimmed">
-                With Fjord Tours you can explore more of the magical fjord
-                landscapes with tours and activities on and around the fjords of
-                Norway
-              </Text>
-            </Card>
+                <Text size="sm" color="dimmed">
+                  With Fjord Tours you can explore more of the magical fjord
+                  landscapes with tours and activities on and around the fjords
+                  of Norway
+                </Text>
+              </Card>
 
-            {/* Back side */}
-            <Card
-              withBorder
-              className={`${classes.card_side} ${classes.card_side__back}`}
-            >
-              <Group position="apart" mt="md" mb="xs">
-                <Text weight={500}>Hello world</Text>
-              </Group>
+              {/* Back side */}
+              <Card
+                withBorder
+                className={`${classes.card_side} ${classes.card_side__back}`}
+              >
+                <Group position="apart" mt="md" mb="xs">
+                  <Text weight={500}>Hello world</Text>
+                </Group>
 
-              <Text size="sm" color="dimmed">
-                With Fjord Tours you can explore more of the magical fjord
-                landscapes
-              </Text>
-              <Button>Liên hệ</Button>
-            </Card>
-          </Grid.Col>
+                <Text size="sm" color="dimmed">
+                  With Fjord Tours you can explore more of the magical fjord
+                  landscapes
+                </Text>
+                <Button>Liên hệ</Button>
+              </Card>
+            </Grid.Col>
+          ))}
         </Grid>
       </Container>
     </>
