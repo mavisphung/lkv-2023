@@ -1,17 +1,15 @@
 import React from "react";
 import "./HomePage.css";
 import {
-  Badge,
-  Box,
   Button,
   Card,
-  Center,
   Container,
   Grid,
   Group,
   Image,
   Text,
   createStyles,
+  getStylesRef,
   rem,
 } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
@@ -66,18 +64,38 @@ const useStyles = createStyles((theme) => ({
       padding: "2.5rem 0 0 0",
     },
   },
-  hot_product__item: {
+  card_side__back: {
+    ref: getStylesRef("card_side__back"),
+    backgroundColor: "green",
+    transform: "rotateY(180deg)",
+  },
+  card_side__front: {
+    ref: getStylesRef("card_side__front"),
+    backgroundColor: "yellow",
+  },
+  card_side: {
+    ref: getStylesRef("card_side"),
     transition: "all .8s ease",
-    "&:hover": {
-      transform: "rotateY(180deg)",
+    width: "auto",
+    top: 0,
+    left: 0,
+    backfaceVisibility: "hidden",
+    gridArea: "1 / 1 / 1 / 1",
+  },
+  card: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: "red",
+    display: "grid",
+    gridTemplateColumns: "100%",
+    gridTemplateRows: "100%",
+    [`&:hover .${getStylesRef("card_side__front")}`]: {
+      transform: "rotateY(-180deg)",
+    },
+    [`&:hover .${getStylesRef("card_side__back")}`]: {
+      transform: "rotateY(0)",
     },
   },
-  back__side: {
-    transform: "rotateY(180deg)"
-  },
-  front__side: {
-    transform: "rotateY(180deg)",
-  }
 }));
 
 const categories: CategoryItem[] = [
@@ -224,82 +242,30 @@ const HomePage = () => {
       <Container size="xl" className={classes.container__py}>
         <SectionHeading isCenter={true} content="Sản phẩm bán chạy" />
         <Grid>
-          <Grid.Col
-            xs={12}
-            sm={4}
-            md={3}
-            lg={2.5}
-          >
-            <Card className={`${classes.hot_product__item}`} withBorder>
-              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
-                Vì nó không có padding/margin */}
-              <Card.Section>
-                {/* <Image src={el.url} height={rem(120)} /> */}
-              </Card.Section>
-              <Text fz="md" fw="bold">
-                Eke máy lạnh 1HP
-              </Text>
-              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
-            </Card>
-          </Grid.Col>
-
-          <Grid.Col
-            xs={12}
-            sm={4}
-            md={3}
-            lg={2.5}
-          >
-            <Card className={`${classes.hot_product__item}`} withBorder>
-              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
-                Vì nó không có padding/margin */}
-              <Card.Section>
-                {/* <Image src={el.url} height={rem(120)} /> */}
-              </Card.Section>
-              <Text fz="md" fw="bold">
-                Eke máy lạnh 1HP
-              </Text>
-              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
-            </Card>
-          </Grid.Col>
-
-          <Grid.Col
-            xs={12}
-            sm={4}
-            md={3}
-            lg={2.5}
-            className={`${classes.hot_product__item}`}
-            sx={{
-              position: "relative"
-            }}
-          >
+          <Grid.Col xs={12} sm={4} md={3} lg={2.5} className={classes.card}>
             {/* Front side */}
-            <Card className={classes.front__side} withBorder sx={{
-              position: "absolute",
-            }}>
-              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
-                Vì nó không có padding/margin */}
-              <Card.Section>
-                {/* <Image src={el.url} height={rem(120)} /> */}
-              </Card.Section>
-              <Text fz="md" fw="bold">
-                Eke máy lạnh 1HP
+            <Card withBorder className={`${classes.card_side} ${classes.card_side__front}`}>
+              <Group position="apart" mt="md" mb="xs">
+                <Text weight={500}>Norway Fjord Adventures</Text>
+              </Group>
+
+              <Text size="sm" color="dimmed">
+                With Fjord Tours you can explore more of the magical fjord
+                landscapes with tours and activities on and around the fjords of
+                Norway
               </Text>
-              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
             </Card>
-            {/* TODO: Complete the back side */}
+
             {/* Back side */}
-            <Card className={classes.back__side} withBorder sx={{
-              position: "absolute",
-            }}>
-              {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
-                Vì nó không có padding/margin */}
-              <Card.Section>
-                {/* <Image src={el.url} height={rem(120)} /> */}
-              </Card.Section>
-              <Text fz="md" fw="bold">
-                Eke máy lạnh 1HP
+            <Card withBorder className={`${classes.card_side} ${classes.card_side__back}`}>
+              <Group position="apart" mt="md" mb="xs">
+                <Text weight={500}>Hello world</Text>
+              </Group>
+
+              <Text size="sm" color="dimmed">
+                With Fjord Tours you can explore more of the magical fjord
+                landscapes
               </Text>
-              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
             </Card>
           </Grid.Col>
         </Grid>
