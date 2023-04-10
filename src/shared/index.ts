@@ -16,7 +16,7 @@ export const myTabs: TabElement[] = [
   },
   {
     name: "Sản phẩm",
-    route: AppRoutes.categories,
+    route: AppRoutes.products,
   },
   {
     name: "Liên hệ",
@@ -32,9 +32,10 @@ export const myMisions : string[] = [
 ];
 
 export const myWorkingHours : string[] = [
-  "Thứ 2 - Thứ 6: 8:00 - 17:00",
-  "Thứ 7: 8:00 - 12:00",
-  "Chủ nhật: Nghỉ",
+  "Sẵn sàng 24/24"
+  // "Thứ 2 - Thứ 6: 8:00 - 17:00",
+  // "Thứ 7: 8:00 - 12:00",
+  // "Chủ nhật: Nghỉ",
 ];
 
 export const myContacts : string[] = [

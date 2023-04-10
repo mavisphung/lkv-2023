@@ -26,7 +26,6 @@ const useStyles = createStyles((theme) => ({
   inner: {
     height: rem(56),
     display: "flex",
-    // justifyContent: 'space',
     alignItems: "center",
   },
 
@@ -57,7 +56,6 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 500,
 
     "&:hover": {
-      //   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
       color: theme.colors.blue,
     },
     [theme.fn.smallerThan("sm")]: {
@@ -65,7 +63,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
   linkActive: {
-    //   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     color: theme.colors.blue,
   },
   linkLabel: {
@@ -75,6 +72,7 @@ const useStyles = createStyles((theme) => ({
     marginRight: "30px",
     color: theme.colors.blue,
     fontWeight: 800,
+    textDecoration: "none",
   },
   contact: {
     color: theme.colors.gray[7],
@@ -175,8 +173,8 @@ export function Header() {
     <MantineHeader height={56} mb={120}>
       <Container size="xl">
         <div className={classes.inner}>
-          <h3 className={classes.logo}>
-            <NavLink to={AppRoutes.root}>LKV</NavLink>
+          <h3>
+            <NavLink className={classes.logo} to={AppRoutes.root}>LKV</NavLink>
           </h3>
           <Group spacing={5} className={classes.links}>
             {headerComponents}
