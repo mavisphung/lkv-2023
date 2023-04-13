@@ -174,7 +174,9 @@ export function Header() {
       <Container size="xl">
         <div className={classes.inner}>
           <h3>
-            <NavLink className={classes.logo} to={AppRoutes.root}>LKV</NavLink>
+            <NavLink className={classes.logo} to={AppRoutes.root}>
+              LKV
+            </NavLink>
           </h3>
           <Group spacing={5} className={classes.links}>
             {headerComponents}

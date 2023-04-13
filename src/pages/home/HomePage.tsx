@@ -119,7 +119,7 @@ const HomePage = () => {
   const autoplay = React.useRef(Autoplay({ delay: 10 * 1000, jump: true }));
   const { classes } = useStyles();
   //
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
@@ -242,7 +242,14 @@ const HomePage = () => {
         <Grid>
           {[...Array(10)].map((el, index) => (
             // Card col
-            <Grid.Col xs={12} sm={4} md={3} lg={2.5} xl={2.4} className={classes.card}>
+            <Grid.Col
+              xs={12}
+              sm={4}
+              md={3}
+              lg={2.5}
+              xl={2.4}
+              className={classes.card}
+            >
               {/* Front side */}
               <Card
                 withBorder
@@ -272,9 +279,13 @@ const HomePage = () => {
                   With Fjord Tours you can explore more of the magical fjord
                   landscapes
                 </Text>
-                <Button onClick= {() => {
-                  navigate(AppRoutes.products + "/" + index)
-                }}>Liên hệ</Button>
+                <Button
+                  onClick={() => {
+                    navigate(AppRoutes.products + "/" + index);
+                  }}
+                >
+                  Liên hệ
+                </Button>
               </Card>
             </Grid.Col>
           ))}

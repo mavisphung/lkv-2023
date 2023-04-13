@@ -1,5 +1,14 @@
 import { Carousel } from "@mantine/carousel";
-import { Button, Container, createStyles, Grid, Group, Paper, Text, Title } from "@mantine/core";
+import {
+  Button,
+  Container,
+  createStyles,
+  Grid,
+  Group,
+  Paper,
+  Text,
+  Title,
+} from "@mantine/core";
 import { useElementSize } from "@mantine/hooks";
 import Autoplay from "embla-carousel-autoplay";
 import React from "react";
@@ -8,30 +17,30 @@ import { products } from "../product-detail/ProductDetailPage";
 
 const useStyles = createStyles((theme) => ({
   btn: {
-    top: 0
+    top: 0,
   },
   btn_container: {
     display: "absolute",
   },
   card: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'flex-start',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: theme.colors.gray[0]
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    color: theme.colors.gray[0],
   },
   product_list: {
     justifyContent: "space-between",
-  }
+  },
 }));
 
 type CategoryItem = {
   url: string;
   title: string;
   description: string;
-}
+};
 
 const categories: CategoryItem[] = [
   {
@@ -69,46 +78,51 @@ const ProductsPage = () => {
               withControls={false}
               draggable={false}
               loop={true}
-              plugins={[autoplay.current]}>
-              {categories.map((el, idx) =>
-                <Carousel.Slide>
+              plugins={[autoplay.current]}
+            >
+              {categories.map((el, idx) => (
+                <Carousel.Slide key={el.title + idx}>
                   <Paper
                     p="xl"
-                    sx={{ backgroundImage: `url(${el.url})`, height: width / 3, }}
+                    sx={{
+                      backgroundImage: `url(${el.url})`,
+                      height: width / 3,
+                    }}
                     className={classes.card}
                   >
                     <div>
-                      <Title order={1} >
-                        {el.title}
-                      </Title>
-                      <Text size="sm" >
-                        {el.description}
-                      </Text>
+                      <Title order={1}>{el.title}</Title>
+                      <Text size="sm">{el.description}</Text>
                     </div>
                     <Button variant="white" color="dark">
                       Xem chi tiết
                     </Button>
                   </Paper>
-                </Carousel.Slide>)}
+                </Carousel.Slide>
+              ))}
             </Carousel>
           </Grid.Col>
 
           <Grid.Col xs={12} sm={4} md={3} lg={3}>
             <h1>Filters Go Here</h1>
           </Grid.Col>
-          <Grid.Col xs={12} sm={8} md={9} lg={9} className={classes.product_list}>
-            <Group>{products.map((el, idx) =>
-              <ProductCard width={width / 5} {...el} />
-            )}</Group>
+          <Grid.Col
+            xs={12}
+            sm={8}
+            md={9}
+            lg={9}
+            className={classes.product_list}
+          >
+            <Group>
+              {products.map((el, idx) => (
+                <ProductCard width={width / 5} {...el} key={el.name + idx} />
+              ))}
+            </Group>
           </Grid.Col>
-
-
-
-
         </Grid>
       </Container>
     </>
-  )
-}
+  );
+};
 
 export default ProductsPage;
