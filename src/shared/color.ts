@@ -1,10 +1,7 @@
 
 const AppColor = {
   palette: {
-    primary: {
-      main: "",
-      white: ""
-    },
+    primary: "blue",
     secondary: {
 
     }

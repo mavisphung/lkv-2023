@@ -1,18 +1,11 @@
-import {
-  Autocomplete,
-  Container,
-  createStyles,
-  Grid,
-  Group,
-  rem,
-  Text,
-} from "@mantine/core";
+import { Container, createStyles, Grid, Group, rem, Text } from "@mantine/core";
 import "./Footer.css";
 import * as React from "react";
 import {
   myContacts,
   myFooterContent,
   myMisions,
+  myTabs,
   myWorkingHours,
 } from "../../shared";
 import { Link } from "react-router-dom";
@@ -170,9 +163,12 @@ const Footer = () => {
             ))}
           </Grid.Col>
           <Grid.Col sm={6} xl={3} pt={rem(56)} className={classes.otherElement}>
-            <Text className={`${classes.title}`}>Đường dẫn</Text>
-            {myMisions.map((el, index) => (
-              <Text key={el + index}>{el}</Text>
+            <Text className={`${classes.title} ${classes.groupLink}`}>Đường dẫn</Text>
+            {/* TODO: Fix this */}
+            {myTabs.slice(0, -1).map((el, index) => (
+              <Link key={el.name + index} to={el.route} className={classes.link}>
+                <Text >{el.name}</Text>
+              </Link>
             ))}
           </Grid.Col>
           <Grid.Col sm={6} xl={3} pt={rem(56)} className={classes.otherElement}>
@@ -191,7 +187,9 @@ const Footer = () => {
       </Container>
       <Container size="xl">
         <Group className={classes.afterFooter}>
-          <Text>Copyright © 2020 CÔNG TY SẢN XUẤT EKE MÁY LẠNH THÀNH ĐẠT</Text>
+          <Text tt="uppercase">
+            Copyright © 2020 cơ sở sản xuất và gia công Long Khánh Vinh
+          </Text>
           <Text>Designed by 200years</Text>
         </Group>
       </Container>
