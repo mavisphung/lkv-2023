@@ -1,9 +1,16 @@
-import { Autocomplete, Container, createStyles, Grid, Group, rem, Text } from "@mantine/core";
+import { Container, createStyles, Grid, Group, rem, Text } from "@mantine/core";
 import "./Footer.css";
 import * as React from "react";
-import { myFooterContent } from "../../shared";
+import {
+  myContacts,
+  myFooterContent,
+  myMisions,
+  myTabs,
+  myWorkingHours,
+} from "../../shared";
 import { Link } from "react-router-dom";
 import { TabElement } from "../../shared/types";
+import AppRoutes from "../../routes/Routes";
 
 const useStyles = createStyles((theme) => ({
   logo: {
@@ -11,7 +18,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 800,
     marginTop: 0,
     marginBottom: `${rem(16)}`,
-    lineHeight: 1
+    lineHeight: 1,
   },
   title: {
     marginBottom: `${rem(16)}`,
@@ -23,14 +30,14 @@ const useStyles = createStyles((theme) => ({
     },
   },
   container: {
-    display: "grid",
-    gridTemplateColumns: "3fr 2fr 3fr 4fr",
-    padding: `${rem(64)} ${rem(24)} ${rem(32)} ${rem(24)}`,
-    [theme.fn.smallerThan("sm")]: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center"
-    },
+    // display: "grid",
+    // gridTemplateColumns: "3fr 2fr 3fr 4fr",
+    // padding: `${rem(64)} ${rem(24)} ${rem(32)} ${rem(24)}`,
+    // [theme.fn.smallerThan("sm")]: {
+    //   display: "flex",
+    //   flexDirection: "column",
+    //   alignItems: "center",
+    // },
   },
   groupText: {
     color: theme.colors.gray[7],
@@ -51,14 +58,12 @@ const useStyles = createStyles((theme) => ({
       flexDirection: "column",
       justifyItems: "center",
     },
-
   },
   groupLink: {
     display: "block",
     [theme.fn.smallerThan("sm")]: {
       display: "none",
     },
-
   },
   link: {
     display: "block",
@@ -66,10 +71,10 @@ const useStyles = createStyles((theme) => ({
     fontSize: 16,
     fontWeight: 400,
     textDecoration: "none",
-    '&:hover': {
+    "&:hover": {
       color: theme.colors.blue,
-      fontWeight: 500
-    }
+      fontWeight: 500,
+    },
   },
   afterFooter: {
     padding: `${rem(16)} 0 ${rem(64)} 0 `,
@@ -85,44 +90,53 @@ const useStyles = createStyles((theme) => ({
     },
   },
   wrapper: {
-    [theme.fn.largerThan("sm")]: {
-      width: rem(200)
+    // [theme.fn.largerThan("sm")]: {
+    //   width: rem(200),
+    // },
+    // [theme.fn.largerThan("lg")]: {
+    //   width: "auto",
+    // },
+  },
+  firstElement: {
+    [theme.fn.smallerThan("xs")]: {
+      textAlign: "center",
     },
-    [theme.fn.largerThan("lg")]: {
-      width: "auto"
+  },
+  otherElement: {
+    [theme.fn.smallerThan("xs")]: {
+      display: "none",
     },
-  }
+  },
 }));
 
-
 const Footer = () => {
-  const { classes } = useStyles()
+  const { classes } = useStyles();
 
   const footerComponents = myFooterContent.map((group) => {
     let titleStyle = classes.title;
     let contentStyle = classes.groupText;
 
     switch (group.type) {
-      case ("logo"):
+      case "logo":
         titleStyle = classes.logo;
         contentStyle = classes.groupLogo;
         break;
-      case ("tab"):
+      case "tab":
         contentStyle = classes.groupLink;
         break;
-      default: break;
+      default:
+        break;
     }
 
     const contents = group.content.map((el, index) => {
       if (group.type === "tab") {
         return (
           <Link to={(el as TabElement).route} className={classes.link}>
-            {(el as TabElement).name}</Link>
+            {(el as TabElement).name}
+          </Link>
         );
       }
-      return (
-        <Text c="dimmed">{el.toString()}</Text>
-      );
+      return <Text c="dimmed">{`${el.toString().slice(0, 4)}`}</Text>;
     });
 
     return (
@@ -132,18 +146,50 @@ const Footer = () => {
           {contents}
         </Group>
       </div>
-
     );
   });
 
   return (
     <React.Fragment>
       <Container size="xl" className={classes.container}>
-        {footerComponents}
+        {/* {footerComponents} */}
+        <Grid>
+          <Grid.Col sm={6} xl={3} pt={rem(56)} className={classes.firstElement}>
+            <Link to={AppRoutes.home} className={`${classes.logo}`}>
+              LKV
+            </Link>
+            {myMisions.map((el, index) => (
+              <Text key={el + index}>{el}</Text>
+            ))}
+          </Grid.Col>
+          <Grid.Col sm={6} xl={3} pt={rem(56)} className={classes.otherElement}>
+            <Text className={`${classes.title} ${classes.groupLink}`}>Đường dẫn</Text>
+            {/* TODO: Fix this */}
+            {myTabs.slice(0, -1).map((el, index) => (
+              <Link key={el.name + index} to={el.route} className={classes.link}>
+                <Text >{el.name}</Text>
+              </Link>
+            ))}
+          </Grid.Col>
+          <Grid.Col sm={6} xl={3} pt={rem(56)} className={classes.otherElement}>
+            <Text className={`${classes.title}`}>Giờ làm việc</Text>
+            {myWorkingHours.map((el, index) => (
+              <Text key={el + index}>{el}</Text>
+            ))}
+          </Grid.Col>
+          <Grid.Col sm={6} xl={3} pt={rem(56)} className={classes.otherElement}>
+            <Text className={`${classes.title}`}>Giờ làm việc</Text>
+            {myContacts.map((el, index) => (
+              <Text key={el + index}>{el}</Text>
+            ))}
+          </Grid.Col>
+        </Grid>
       </Container>
       <Container size="xl">
         <Group className={classes.afterFooter}>
-          <Text>Copyright © 2020 CÔNG TY SẢN XUẤT EKE MÁY LẠNH THÀNH ĐẠT</Text>
+          <Text tt="uppercase">
+            Copyright © 2020 cơ sở sản xuất và gia công Long Khánh Vinh
+          </Text>
           <Text>Designed by 200years</Text>
         </Group>
       </Container>
