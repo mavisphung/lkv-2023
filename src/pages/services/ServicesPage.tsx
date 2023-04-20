@@ -1,10 +1,11 @@
 import {
   Breadcrumbs,
+  Button,
   Card,
   Container,
   Grid,
   Group,
-  Spoiler,
+  Space,
   Text,
   ThemeIcon,
   Title,
@@ -18,9 +19,14 @@ import { myBreadcrumbs } from "../../shared";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import {
+  IconAlignBoxLeftTop,
   IconBookmark,
   IconBrandAmazon,
+  IconBriefcase,
+  IconProgress,
   IconServerCog,
+  IconShoppingCartPlus,
+  IconTruckDelivery,
 } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
@@ -30,6 +36,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const ICON_SIZE = rem(56);
+const BANNER_ORDER = 5;
 
 export const ServicesPage = () => {
   const { classes } = useStyles();
@@ -71,13 +78,13 @@ export const ServicesPage = () => {
           </Grid.Col>
         </Grid>
         <Grid className={classes.content__section}>
-          <Grid.Col xs={12} md={4}>
+          <Grid.Col xs={12} md="auto">
             <Card withBorder>
               <Group>
                 <ThemeIcon color="dark" variant="filled">
                   <IconBookmark size={ICON_SIZE} />
                 </ThemeIcon>
-                <Title order={4}>Làm theo yêu cầu</Title>
+                <Title order={BANNER_ORDER}>Làm theo yêu cầu</Title>
                 <Text>
                   Chúng tôi có nhận gia công và thiết kế phụ kiện theo yêu cầu
                   của khách hàng
@@ -85,13 +92,13 @@ export const ServicesPage = () => {
               </Group>
             </Card>
           </Grid.Col>
-          <Grid.Col xs={12} md={4}>
+          <Grid.Col xs={12} md="auto">
             <Card withBorder>
               <Group>
                 <ThemeIcon color="dark" variant="filled">
                   <IconServerCog size={ICON_SIZE} />
                 </ThemeIcon>
-                <Title order={4}>Gia công, sản xuất</Title>
+                <Title order={BANNER_ORDER}>Gia công, sản xuất</Title>
                 <Text>
                   Cung cấp dịch gia công và sản xuất theo thiết kế của khách
                   hàng cung cấp
@@ -99,17 +106,63 @@ export const ServicesPage = () => {
               </Group>
             </Card>
           </Grid.Col>
-          <Grid.Col xs={12} md={4}>
+          <Grid.Col xs={12} md="auto">
             <Card withBorder>
               <Group>
                 <ThemeIcon color="dark" variant="filled">
                   <IconBrandAmazon size={ICON_SIZE} />
                 </ThemeIcon>
-                <Title order={4}>Phân phối sỉ, lẻ các loại</Title>
+                <Title order={BANNER_ORDER}>Phân phối sỉ, lẻ các loại</Title>
                 <Text>
                   Cung cấp, phân phối sỉ lẻ các loại phụ kiện giá cả phải chăng
                 </Text>
               </Group>
+            </Card>
+          </Grid.Col>
+        </Grid>
+      </Container>
+      <Space h="xl" />
+      <Container size="xl">
+        <Group>
+          <ThemeIcon size={rem(24)} color="dark" variant="outline">
+            <IconBriefcase size={rem(24)} />
+          </ThemeIcon>
+          <Title order={4}>Quy trình làm việc</Title>
+          <Text c="dimmed">
+            Những đơn hàng, yêu cầu sẽ được xử lí như thế nào?
+          </Text>
+        </Group>
+        <Space h="md" />
+        <Grid>
+          <Grid.Col md={3}>
+            <Card>
+              <Group position="apart">
+                <IconAlignBoxLeftTop size={ICON_SIZE} />
+                <Button color="#1864a">Liên hệ</Button>
+              </Group>
+              <Title order={4}>Bước 1</Title>
+              <Text>Liên hệ hotline: 0395833593</Text>
+            </Card>
+          </Grid.Col>
+          <Grid.Col md={3}>
+            <Card>
+              <IconShoppingCartPlus size={ICON_SIZE} />
+              <Title order={4}>Bước 2</Title>
+              <Text>Nhận đơn đặt hàng</Text>
+            </Card>
+          </Grid.Col>
+          <Grid.Col md={3}>
+            <Card>
+              <IconProgress size={ICON_SIZE} />
+              <Title order={4}>Bước 3</Title>
+              <Text>Gia công, sản xuất</Text>
+            </Card>
+          </Grid.Col>
+          <Grid.Col md={3}>
+            <Card>
+              <IconTruckDelivery size={ICON_SIZE} />
+              <Title order={4}>Bước 4</Title>
+              <Text>Giao hàng</Text>
             </Card>
           </Grid.Col>
         </Grid>
