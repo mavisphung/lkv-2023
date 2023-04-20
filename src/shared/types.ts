@@ -10,3 +10,7 @@ export type FooterElement = {
   type: "text" | "tab" | "logo";
 }
 
+export type BreadcrumbItem = {
+  title: string;
+  href: string;
+}
