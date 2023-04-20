@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 import { Outlet } from "react-router-dom";
 import { AppShell } from "@mantine/core";
 import { Header } from "./components/header/Header";
+import { ScrollToTop } from "./components/utilities/ScrollToTop";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         },
       })}
     >
+      <ScrollToTop />
       <Outlet />
     </AppShell>
   );

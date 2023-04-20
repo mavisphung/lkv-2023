@@ -10,15 +10,18 @@ import {
   Button,
   Transition,
   Paper,
+  Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { myTabs } from "../../shared";
 import { TabElement } from "../../shared/types";
+import { useEffect } from "react";
+import AppRoutes from "../../routes/Routes";
 
-const HEADER_HEIGHT = rem(60);
+const HEADER_HEIGHT = rem(56);
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -80,10 +83,10 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 600,
 
     [theme.fn.smallerThan("sm")]: {
-      textAlign: "center"
+      textAlign: "center",
     },
     [theme.fn.largerThan("sm")]: {
-      marginLeft: "auto"
+      marginLeft: "auto",
     },
   },
   icon: {
@@ -120,6 +123,7 @@ const useStyles = createStyles((theme) => ({
 export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const { classes, cx } = useStyles();
+  const { pathname } = useLocation();
 
   function a11yProps(index: number) {
     return {
@@ -131,6 +135,17 @@ export function Header() {
   // App bar dành cho desktop
   const desktopTabs: TabElement[] = myTabs.slice(0, -1);
   const [active, setActive] = useState<string>(desktopTabs[0].route);
+
+  useEffect(() => {
+    if (!pathname) {
+      return;
+    }
+    if (pathname === desktopTabs[0].route || pathname === AppRoutes.root) {
+      setActive(desktopTabs[0].route);
+    } else {
+      setActive(pathname);
+    }
+  }, [pathname]);
 
   const headerComponents = (
     <>
@@ -150,7 +165,7 @@ export function Header() {
           {el.name}
         </Link>
       ))}
-      <h5 className={classes.contact}>Liên hệ: 0908 779 519</h5>
+      <Title className={classes.contact}>Liên hệ: 0909381333</Title>
     </>
   );
 
@@ -161,7 +176,9 @@ export function Header() {
     <MantineHeader height={56} mb={120}>
       <Container size="xl">
         <div className={classes.inner}>
-          <h3 className={classes.logo}>LKV</h3>
+          <h3 className={classes.logo}>
+            <NavLink to={AppRoutes.root}>LKV</NavLink>
+          </h3>
           <Group spacing={5} className={classes.links}>
             {headerComponents}
           </Group>
