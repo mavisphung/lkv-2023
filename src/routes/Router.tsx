@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Routes from "./Routes";
-import ErrorPage from '../pages/error/ErrorPage';
-import AboutPage from '../pages/about/AboutPage';
-import HomePage from '../pages/home/HomePage';
-import App from '../App';
-import { CategoriesPage } from '../pages/categories/CategoriesPage';
-import { ServicesPage } from '../pages/services/ServicesPage';
-import ProductDetailPage from '../pages/product-detail/ProductDetailPage';
-import ProductsPage from '../pages/products/ProducstPage';
+import ErrorPage from "../pages/error/ErrorPage";
+import AboutPage from "../pages/about/AboutPage";
+import HomePage from "../pages/home/HomePage";
+import App from "../App";
+import { CategoriesPage } from "../pages/categories/CategoriesPage";
+import { ServicesPage } from "../pages/services/ServicesPage";
+import ProductDetailPage from "../pages/product-detail/ProductDetailPage";
+import ProductsPage from "../pages/products/ProductsPage";
 
 const router = createBrowserRouter([
   {
