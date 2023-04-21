@@ -1,5 +1,5 @@
 import AppRoutes from "../routes/Routes";
-import { FooterElement, TabElement } from "./types";
+import { BreadcrumbItem, FooterElement, TabElement } from "./types";
 
 export const myTabs: TabElement[] = [
   {
@@ -24,12 +24,13 @@ export const myTabs: TabElement[] = [
   },
 ];
 
-export const myMisions : string[] = [
+export const myMisions: string[] = [
   "Uy tín - Chất lượng",
   "Chế độ bảo hành tốt nhất",
   "Giá cả hợp lý",
   "Đội ngũ nhân viên chuyên nghiệp",
 ];
+
 
 export const myWorkingHours : string[] = [
   "Sẵn sàng 24/24"
@@ -38,13 +39,13 @@ export const myWorkingHours : string[] = [
   // "Chủ nhật: Nghỉ",
 ];
 
-export const myContacts : string[] = [
+export const myContacts: string[] = [
   "0908 779 519",
   "nguyenhoangkimlong2013@gmail.com",
   "17/7 Ấp Xuân Thới Đông 1, Xuân Thới Đông. Hóc Môn, Tp Hồ Chí Minh"
 ];
 
-export const myFooterContent : FooterElement[] = [
+export const myFooterContent: FooterElement[] = [
   {
     title: "LKV",
     content: myMisions,
@@ -66,3 +67,10 @@ export const myFooterContent : FooterElement[] = [
     type: "text",
   }
 ]
+
+export const myBreadcrumbs: BreadcrumbItem[] = [
+  {
+    title: "Trang chủ",
+    href: AppRoutes.home,
+  }
+];
