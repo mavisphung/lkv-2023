@@ -8,6 +8,7 @@ import {
   Group,
   Image,
   Text,
+  Title,
   createStyles,
   getStylesRef,
   rem,
@@ -99,19 +100,19 @@ const categories: CategoryItem[] = [
     url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/img0151-155.JPG",
     title: "Eke máy lạnh",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore.",
+      "Giá đỡ cục nóng, phụ kiện không thể thiếu cho máy lạnh.",
   },
   {
     url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/pas1-6885.png",
-    title: "Pas đa năng đầu lạnh",
+    title: "Pas (pát) đa năng",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore.",
+      "Khớp nối dùng để liên kết các chi tiết với nhau.",
   },
   {
     url: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "Máy biến áp",
+    title: "Sản phẩm khác",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore.",
+      "Bao gồm bánh xe nhựa, chìa khóa miệng (cờ lê), chân ke, v.v",
   },
 ];
 
@@ -188,11 +189,15 @@ const HomePage = () => {
         <SectionHeading isCenter={true} content="Chúng tôi là ai" />
         <Text component="p">
           LKV vừa là cơ sở sản xuất, vừa là nhà phân phối sỉ lẻ chuyên các loại
-          sản phẩm dành cho máy lạnh như eke máy lạnh (giá đỡ cục nóng) các loại
-          từ 1HP cho đến 2.5HP, ốc hàn, Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Cupiditate a facilis dolorem doloribus ab quibusdam,
-          aliquid vel quidem? Facilis recusandae ipsa libero praesentium
-          perferendis deleniti qui esse officiis impedit amet.
+          phụ kiện điện máy như eke máy lạnh (giá đỡ cục nóng), pas đa năng các
+          loại. Ngoài ra chúng tôi nhận đặt hàng theo yêu cầu của khách hàng.
+          Với đội ngũ nhân viên nhiệt tình, chuyên nghiệp, chúng tôi luôn đem
+          lại cho khách hàng những sản phẩm chất lượng tốt nhất. Chúng tôi luôn
+          sẵn sàng phục vụ khách hàng 24/7. Nếu bạn có bất kỳ thắc mắc nào, vui
+          lòng liên hệ với chúng tôi qua số điện thoại{" "}
+          <Title display="inline-block" color="blue" underline order={6}>
+            0901.381.333
+          </Title>
         </Text>
         <NavLink to={AppRoutes.about}>
           <Button className={classes.button}>Tìm hiểu thêm</Button>
@@ -242,7 +247,14 @@ const HomePage = () => {
         <Grid>
           {[...Array(10)].map((el, index) => (
             // Card col
-            <Grid.Col xs={12} sm={4} md={3} lg={2.5} xl={2.4} className={classes.card}>
+            <Grid.Col
+              xs={12}
+              sm={4}
+              md={3}
+              lg={2.5}
+              xl={2.4}
+              className={classes.card}
+            >
               {/* Front side */}
               <Card
                 withBorder

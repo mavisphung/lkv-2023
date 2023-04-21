@@ -10,6 +10,7 @@ import {
   Button,
   Transition,
   Paper,
+  Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconSearch } from "@tabler/icons-react";
@@ -162,7 +163,7 @@ export function Header() {
           {el.name}
         </Link>
       ))}
-      <h5 className={classes.contact}>Liên hệ: 0908 779 519</h5>
+      <Title className={classes.contact}>Liên hệ: 0909381333</Title>
     </>
   );
 
