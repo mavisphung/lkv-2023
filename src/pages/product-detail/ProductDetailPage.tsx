@@ -96,7 +96,7 @@ export const products: Product[] = [
     discount: 10
   },
   {
-    id: 0,
+    id: 1,
     name: "Máy Biến Áp Dành Cho Máy Lạnh Nội Địa",
     imgURL: [
       "https://www.offidocs.com/images/oceancovesea.jpg",
@@ -115,7 +115,7 @@ export const products: Product[] = [
     discount: 10
   },
   {
-    id: 0,
+    id: 2,
     name: "Máy Biến Áp Dành Cho Máy Lạnh Nội Địa",
     imgURL: [
       "https://www.offidocs.com/images/oceancovesea.jpg",
@@ -134,7 +134,7 @@ export const products: Product[] = [
     discount: 10
   },
   {
-    id: 0,
+    id: 3,
     name: "Máy Biến Áp Dành Cho Máy Lạnh Nội Địa",
     imgURL: [
       "https://www.offidocs.com/images/oceancovesea.jpg",

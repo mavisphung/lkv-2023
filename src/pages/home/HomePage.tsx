@@ -120,7 +120,7 @@ const HomePage = () => {
   const autoplay = React.useRef(Autoplay({ delay: 10 * 1000, jump: true }));
   const { classes } = useStyles();
   //
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
@@ -284,9 +284,13 @@ const HomePage = () => {
                   With Fjord Tours you can explore more of the magical fjord
                   landscapes
                 </Text>
-                <Button onClick= {() => {
-                  navigate(AppRoutes.products + "/" + index)
-                }}>Liên hệ</Button>
+                <Button
+                  onClick={() => {
+                    navigate(AppRoutes.products + "/" + index);
+                  }}
+                >
+                  Liên hệ
+                </Button>
               </Card>
             </Grid.Col>
           ))}

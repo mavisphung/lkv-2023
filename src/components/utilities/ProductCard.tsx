@@ -11,22 +11,22 @@ import {
 import { IconRosetteFilled } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
-  card:{
-    "&:hover":{
+  card: {
+    "&:hover": {
       boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.2)",
-      transform: "scale(1.02)"
-    }
+      transform: "scale(1.02)",
+    },
   },
   name: {
-    display: 'block',
+    display: "block",
     marginTop: theme.spacing.md,
     marginBottom: rem(5),
   },
   sale_badge: {
-    position: 'absolute',
+    position: "absolute",
     top: theme.spacing.sm,
     right: theme.spacing.sm,
-    pointerEvents: 'none',
+    pointerEvents: "none",
     color: theme.colors.blue,
     display: "grid",
     placeItems: "center",

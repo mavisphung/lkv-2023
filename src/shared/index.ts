@@ -36,7 +36,7 @@ export const myWorkingHours : string[] = [
   "Sẵn sàng 24/24"
   // "Thứ 2 - Thứ 6: 8:00 - 17:00",
   // "Thứ 7: 8:00 - 12:00",
-  // "Chủ nhật: Nghỉ"
+  // "Chủ nhật: Nghỉ",
 ];
 
 export const myContacts: string[] = [

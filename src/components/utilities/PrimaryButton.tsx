@@ -1,12 +1,16 @@
-import { Button, createStyles } from "@mantine/core"
+import { Button, createStyles } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
-  btn:{
-    backgroundColor: theme.colors.blue
-  }
-}))
+  btn: {
+    backgroundColor: theme.colors.blue,
+  },
+}));
 
 export const CustomPrimanyButton = (props: any) => {
-  const {classes} = useStyles()
-  return (<Button fullWidth className={classes.btn} >{props.title}</Button>)
-}
+  const { classes } = useStyles();
+  return (
+    <Button fullWidth className={classes.btn}>
+      {props.title}
+    </Button>
+  );
+};

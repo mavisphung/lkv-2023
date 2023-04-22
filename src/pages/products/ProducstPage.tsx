@@ -95,7 +95,7 @@ const ProductsPage = () => {
               plugins={[autoplay.current]}
             >
               {categories.map((el, idx) => (
-                <Carousel.Slide>
+                <Carousel.Slide key={el.title + idx}>
                   <Paper
                     shadow="md"
                     p="xl"
@@ -133,7 +133,7 @@ const ProductsPage = () => {
           >
             <Group>
               {products.map((el, idx) => (
-                <ProductCard width={width / 5} {...el} />
+                <ProductCard width={width / 5} {...el} key={el.name + idx} />
               ))}
             </Group>
           </Grid.Col>

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
 import ErrorPage from "../pages/error/ErrorPage";
 import AboutPage from "../pages/about/AboutPage";
@@ -11,7 +11,7 @@ import ProductsPage from "../pages/products/ProductsPage";
 
 const router = createBrowserRouter([
   {
-    path: '',
+    path: "",
     element: <App />,
     children: [
       {
@@ -35,13 +35,13 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <ProductsPage/>
+            element: <ProductsPage />,
           },
           {
-            path: ':productId',
-            element: <ProductDetailPage/>
-          }
-        ]
+            path: ":productId",
+            element: <ProductDetailPage />,
+          },
+        ],
       },
       {
         path: Routes.categories,
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <ErrorPage />,
       },
     ],
-  }
+  },
 ]);
 
 export default router;
