@@ -116,7 +116,7 @@ const ProductsPage = () => {
             </Carousel>
           </Grid.Col>
           {/* Filters go here */}
-          <Grid.Col xs={12} sm={3}>
+          <Grid.Col sm={12} md={3}>
             <Accordion>
               {categories.map((el, idx) => (
                 <Accordion.Item value={el.title}>
@@ -148,28 +148,28 @@ const ProductsPage = () => {
             className={classes.product_list}
             sx={{ backgroundColor: "red" }}
           >
-            <Grid justify="space-around" grow>
+            <Grid>
               {products.map(
                 (el, idx) => (
                   // <Grid.Col span={"content"} >
                   /* sx={{ backgroundColor: "blue" }}> */
                   /* not responsive yet*/
-                  <Box sx={{ marginBottom: "1rem" }}>
-                    <ProductCard
-                      width={
-                        mobile ? width / 2 - 10 : width / 5 - 10 * 3
-                      } /*clamp(value: number, min: number, max: number)*/
-                      {...el}
-                      key={el.name + idx}
-                    />
-                  </Box>
-                ),
+                  // ----------------------------
+                  // <Box sx={{ marginBottom: "1rem" }}>
+                  //   <ProductCard
+                  //     width={
+                  //       mobile ? width / 2 - 10 : width / 5 - 10 * 3
+                  //     } /*clamp(value: number, min: number, max: number)*/
+                  //     {...el}
+                  //     key={el.name + idx}
+                  //   />
+                  // </Box>
+                  // ----------------------------
+                  <Grid.Col sm={6} md={4} lg={3} key={el.name + idx}>
+                    <ProductCard {...el} />
+                  </Grid.Col>
+                )
                 /* </Grid.Col> */
-              )}
-              {products.length % 4 != 0 ? (
-                <Container sx={{ backgroundColor: "blue" }}></Container>
-              ) : (
-                ""
               )}
             </Grid>
           </Grid.Col>
