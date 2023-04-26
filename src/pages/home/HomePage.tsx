@@ -1,9 +1,12 @@
 import React from "react";
 import "./HomePage.css";
 import {
+  Badge,
   Button,
   Card,
+  Center,
   Container,
+  CopyButton,
   Grid,
   Group,
   Image,
@@ -18,6 +21,11 @@ import Autoplay from "embla-carousel-autoplay";
 import { Link, NavLink } from "react-router-dom";
 import AppRoutes from "../../routes/Routes";
 import SectionHeading from "../../components/utilities/SectionHeading";
+import { ProductCard } from "../../components/ProductCard";
+import pas_chu_z from "../../assets/images/pas_chu_z.svg";
+import pas_dong_tien from "../../assets/images/pas_dong_tien.svg";
+import pas_chu_m from "../../assets/images/pas_chu_m.svg";
+import pas_chu_l from "../../assets/images/pas_chu_L.svg";
 
 const useStyles = createStyles((theme) => ({
   banner: {
@@ -99,20 +107,17 @@ const categories: CategoryItem[] = [
   {
     url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/img0151-155.JPG",
     title: "Eke máy lạnh",
-    description:
-      "Giá đỡ cục nóng, phụ kiện không thể thiếu cho máy lạnh.",
+    description: "Giá đỡ cục nóng, phụ kiện không thể thiếu cho máy lạnh.",
   },
   {
     url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/pas1-6885.png",
     title: "Pas (pát) đa năng",
-    description:
-      "Khớp nối dùng để liên kết các chi tiết với nhau.",
+    description: "Khớp nối dùng để liên kết các chi tiết với nhau.",
   },
   {
     url: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
     title: "Sản phẩm khác",
-    description:
-      "Bao gồm bánh xe nhựa, chìa khóa miệng (cờ lê), chân ke, v.v",
+    description: "Bao gồm bánh xe nhựa, chìa khóa miệng (cờ lê), chân ke, v.v",
   },
 ];
 
@@ -243,49 +248,28 @@ const HomePage = () => {
       <Container size="xl" className={classes.container__py}>
         <SectionHeading isCenter={true} content="Sản phẩm bán chạy" />
         <Grid>
-          {[...Array(10)].map((el, index) => (
-            // Card col
-            <Grid.Col
-              xs={12}
-              sm={4}
-              md={3}
-              lg={2.5}
-              xl={2.4}
-              className={classes.card}
-            >
-              {/* Front side */}
-              <Card
-                withBorder
-                className={`${classes.card_side} ${classes.card_side__front}`}
-              >
-                <Group position="apart" mt="md" mb="xs">
-                  <Text weight={500}>Norway Fjord Adventures</Text>
-                </Group>
-
-                <Text size="sm" color="dimmed">
-                  With Fjord Tours you can explore more of the magical fjord
-                  landscapes with tours and activities on and around the fjords
-                  of Norway
-                </Text>
-              </Card>
-
-              {/* Back side */}
-              <Card
-                withBorder
-                className={`${classes.card_side} ${classes.card_side__back}`}
-              >
-                <Group position="apart" mt="md" mb="xs">
-                  <Text weight={500}>Hello world</Text>
-                </Group>
-
-                <Text size="sm" color="dimmed">
-                  With Fjord Tours you can explore more of the magical fjord
-                  landscapes
-                </Text>
-                <Button>Liên hệ</Button>
-              </Card>
-            </Grid.Col>
-          ))}
+          <Grid.Col sm={6} md={4} lg={3}>
+            <ProductCard
+              title="Eke máy lạnh"
+              alt="Eke-may-lanh"
+              image="https://cdn.tgdd.vn/Products/Images/9538/234421/gia-do-cuc-nong-eke-45cminox-304ad-1-org.jpg"
+              contact="0349799358"
+              // fromPrice="51,000đ"
+              // toPrice="90,000đ"
+              badges={["1 HP", "1.5 HP", "2 HP", "2.5 HP"]}
+            />
+          </Grid.Col>
+          <Grid.Col sm={6} md={4} lg={3}>
+            <ProductCard
+              title="Pas sắt các loại"
+              alt="pas-sat"
+              image={pas_chu_m}
+              contact="0349799358"
+              // fromPrice="51,000đ"
+              // toPrice="90,000đ"
+              badges={["Chữ M", "Chữ Z", "60x5/16", "Chữ L"]}
+            />
+          </Grid.Col>
         </Grid>
       </Container>
     </>
