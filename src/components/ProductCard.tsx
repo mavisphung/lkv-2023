@@ -4,7 +4,6 @@ import {
   Button,
   Card,
   CopyButton,
-  Image,
   Text,
   Title,
   rem,

@@ -1,16 +1,16 @@
-import { Container } from "@mantine/core"
-
+import { Container, Space, Text, Title, rem } from "@mantine/core";
 
 const ErrorPage = () => {
-
   return (
-    <>
-      <Container maw="xl">
-        <h1>Error page</h1>
-        <p>If you see this page, it means that something went wrong</p>
-      </Container>
-    </>
-  )
-}
+    <Container size="xl">
+      <Title>Lỗi: Không tìm thấy</Title>
+      <Space h={rem(36)} />
+      <Text>
+        Nếu quý khách nhìn thấy trang này nghĩa là chúng tôi không cung cấp dịch
+        vụ đó hoặc không có thông tin quý khách cần
+      </Text>
+    </Container>
+  );
+};
 
-export default ErrorPage
+export default ErrorPage;

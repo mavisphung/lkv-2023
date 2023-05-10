@@ -1,14 +1,9 @@
 import React from "react";
 import "./HomePage.css";
 import {
-  Badge,
   Button,
-  Card,
-  Center,
   Container,
-  CopyButton,
   Grid,
-  Group,
   Image,
   Text,
   Title,
@@ -22,7 +17,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import AppRoutes from "../../routes/Routes";
 import SectionHeading from "../../components/utilities/SectionHeading";
 import { ProductCard } from "../../components/ProductCard";
-import pas_chu_z from "../../assets/images/pas_chu_z.svg";
+// import pas_chu_z from "../../assets/images/pas_chu_z.svg";
 import pas_dong_tien from "../../assets/images/pas_dong_tien.svg";
 import pas_chu_m from "../../assets/images/pas_chu_m.svg";
 import banner from "../../assets/images/Banner.svg";
@@ -104,29 +99,29 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const categories: CategoryItem[] = [
-  {
-    url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/img0151-155.JPG",
-    title: "Eke máy lạnh",
-    description: "Giá đỡ cục nóng, phụ kiện không thể thiếu cho máy lạnh.",
-  },
-  {
-    url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/pas1-6885.png",
-    title: "Pas (pát) đa năng",
-    description: "Khớp nối dùng để liên kết các chi tiết với nhau.",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "Sản phẩm khác",
-    description: "Bao gồm bánh xe nhựa, chìa khóa miệng (cờ lê), chân ke, v.v",
-  },
-];
+// const categories: CategoryItem[] = [
+//   {
+//     url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/img0151-155.JPG",
+//     title: "Eke máy lạnh",
+//     description: "Giá đỡ cục nóng, phụ kiện không thể thiếu cho máy lạnh.",
+//   },
+//   {
+//     url: "http://ekemaylanh.com/thumb/230x210/1/upload/product/pas1-6885.png",
+//     title: "Pas (pát) đa năng",
+//     description: "Khớp nối dùng để liên kết các chi tiết với nhau.",
+//   },
+//   {
+//     url: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+//     title: "Sản phẩm khác",
+//     description: "Bao gồm bánh xe nhựa, chìa khóa miệng (cờ lê), chân ke, v.v",
+//   },
+// ];
 
 const HomePage = () => {
   const autoplay = React.useRef(Autoplay({ delay: 10 * 1000, jump: true }));
   const { classes } = useStyles();
   //
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <>
@@ -204,8 +199,8 @@ const HomePage = () => {
 
 export default HomePage;
 
-type CategoryItem = {
-  url: string;
-  title: string;
-  description: string;
-};
+// type CategoryItem = {
+//   url: string;
+//   title: string;
+//   description: string;
+// };

@@ -6,8 +6,8 @@ import HomePage from "../pages/home/HomePage";
 import App from "../App";
 import { CategoriesPage } from "../pages/categories/CategoriesPage";
 import { ServicesPage } from "../pages/services/ServicesPage";
-import ProductDetailPage from "../pages/product-detail/ProductDetailPage";
-import ProductsPage from "../pages/products/ProductsPage";
+// import ProductDetailPage from "../pages/product-detail/ProductDetailPage";
+// import ProductsPage from "../pages/products/ProductsPage";
 
 const router = createBrowserRouter([
   {
@@ -30,19 +30,19 @@ const router = createBrowserRouter([
         path: Routes.services,
         element: <ServicesPage />,
       },
-      {
-        path: Routes.products,
-        children: [
-          {
-            index: true,
-            element: <ProductsPage />,
-          },
-          {
-            path: ":productId",
-            element: <ProductDetailPage />,
-          },
-        ],
-      },
+      // {
+      //   path: Routes.products,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <ProductsPage />,
+      //     },
+      //     {
+      //       path: ":productId",
+      //       element: <ProductDetailPage />,
+      //     },
+      //   ],
+      // },
       {
         path: Routes.categories,
         element: <CategoriesPage />,

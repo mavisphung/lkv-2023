@@ -15,7 +15,7 @@ import pas_dong_tien from "../../assets/images/pas_dong_tien.svg";
 import pas_chu_m from "../../assets/images/pas_chu_m.svg";
 import pas_chu_l from "../../assets/images/pas_chu_L.svg";
 
-const CONTENT_PADDING = rem(56);
+// const CONTENT_PADDING = rem(56);
 
 const useStyles = createStyles((theme) => ({
   section__container: {
@@ -51,7 +51,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const googleDrive = "https://drive.google.com/uc?export=view&id=";
+// const googleDrive = "https://drive.google.com/uc?export=view&id=";
 
 const imageServices: { url: string; caption: string; alt?: string }[] = [
   {

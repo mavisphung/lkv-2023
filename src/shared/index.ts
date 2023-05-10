@@ -14,10 +14,10 @@ export const myTabs: TabElement[] = [
     name: "Dịch vụ",
     route: AppRoutes.services,
   },
-  {
-    name: "Sản phẩm",
-    route: AppRoutes.products,
-  },
+  // {
+  //   name: "Sản phẩm",
+  //   route: AppRoutes.products,
+  // },
   {
     name: "Liên hệ",
     route: AppRoutes.contact,

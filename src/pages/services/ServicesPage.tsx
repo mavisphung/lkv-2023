@@ -1,9 +1,7 @@
 import {
-  Box,
   Breadcrumbs,
   Button,
   Card,
-  Center,
   Container,
   Grid,
   Group,
@@ -22,7 +20,6 @@ import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import {
   IconAlignBoxLeftTop,
-  IconArrowLeft,
   IconBookmark,
   IconBrandAmazon,
   IconBriefcase,
