@@ -1,7 +1,9 @@
 import {
+  Box,
   Breadcrumbs,
   Button,
   Card,
+  Center,
   Container,
   Grid,
   Group,
@@ -20,6 +22,7 @@ import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import {
   IconAlignBoxLeftTop,
+  IconArrowLeft,
   IconBookmark,
   IconBrandAmazon,
   IconBriefcase,
@@ -135,13 +138,13 @@ export const ServicesPage = () => {
         <Space h="md" />
         <Grid>
           <Grid.Col md={3}>
-            <Card>
+            <Card h={rem(144.5)}>
               <Group position="apart">
                 <IconAlignBoxLeftTop size={ICON_SIZE} />
                 <Button color="#1864a">Liên hệ</Button>
               </Group>
               <Title order={4}>Bước 1</Title>
-              <Text>Liên hệ hotline: 0395833593</Text>
+              <Text>Liên hệ: 0395833593</Text>
             </Card>
           </Grid.Col>
           <Grid.Col md={3}>

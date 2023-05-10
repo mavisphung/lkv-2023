@@ -74,3 +74,5 @@ export const myBreadcrumbs: BreadcrumbItem[] = [
     href: AppRoutes.home,
   }
 ];
+
+export const phoneNumber: string = "0909381333";
