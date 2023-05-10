@@ -1,9 +1,7 @@
 import {
   createStyles,
   Header as MantineHeader,
-  Menu,
   Group,
-  Center,
   Burger,
   Container,
   rem,
@@ -143,7 +141,7 @@ export function Header() {
     } else {
       setActive(pathname);
     }
-  }, [pathname]);
+  }, [pathname, desktopTabs]);
 
   const headerComponents = (
     <>

@@ -112,42 +112,42 @@ const useStyles = createStyles((theme) => ({
 const Footer = () => {
   const { classes } = useStyles();
 
-  const footerComponents = myFooterContent.map((group) => {
-    let titleStyle = classes.title;
-    let contentStyle = classes.groupText;
+  // const footerComponents = myFooterContent.map((group) => {
+  //   let titleStyle = classes.title;
+  //   let contentStyle = classes.groupText;
 
-    switch (group.type) {
-      case "logo":
-        titleStyle = classes.logo;
-        contentStyle = classes.groupLogo;
-        break;
-      case "tab":
-        contentStyle = classes.groupLink;
-        break;
-      default:
-        break;
-    }
+  //   switch (group.type) {
+  //     case "logo":
+  //       titleStyle = classes.logo;
+  //       contentStyle = classes.groupLogo;
+  //       break;
+  //     case "tab":
+  //       contentStyle = classes.groupLink;
+  //       break;
+  //     default:
+  //       break;
+  //   }
 
-    const contents = group.content.map((el, index) => {
-      if (group.type === "tab") {
-        return (
-          <Link to={(el as TabElement).route} className={classes.link}>
-            {(el as TabElement).name}
-          </Link>
-        );
-      }
-      return <Text c="dimmed">{`${el.toString().slice(0, 4)}`}</Text>;
-    });
+  //   const contents = group.content.map((el, index) => {
+  //     if (group.type === "tab") {
+  //       return (
+  //         <Link to={(el as TabElement).route} className={classes.link}>
+  //           {(el as TabElement).name}
+  //         </Link>
+  //       );
+  //     }
+  //     return <Text c="dimmed">{`${el.toString().slice(0, 4)}`}</Text>;
+  //   });
 
-    return (
-      <div className={classes.wrapper}>
-        <Group className={contentStyle}>
-          <Text className={titleStyle}>{group.title}</Text>
-          {contents}
-        </Group>
-      </div>
-    );
-  });
+  //   return (
+  //     <div className={classes.wrapper}>
+  //       <Group className={contentStyle}>
+  //         <Text className={titleStyle}>{group.title}</Text>
+  //         {contents}
+  //       </Group>
+  //     </div>
+  //   );
+  // });
 
   return (
     <React.Fragment>

@@ -20,7 +20,7 @@ export type ProductCardProps = {
 };
 
 export const ProductCard = (props: ProductCardProps) => {
-  const { image, alt, fromPrice, toPrice, contact, title, badges } = props;
+  const { image, fromPrice, toPrice, contact, title, badges } = props;
   return (
     <Card withBorder>
       <Card.Section>
