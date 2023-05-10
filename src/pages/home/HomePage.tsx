@@ -18,7 +18,7 @@ import {
 } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import AppRoutes from "../../routes/Routes";
 import SectionHeading from "../../components/utilities/SectionHeading";
 import { ProductCard } from "../../components/ProductCard";
@@ -126,6 +126,8 @@ const HomePage = () => {
   const autoplay = React.useRef(Autoplay({ delay: 10 * 1000, jump: true }));
   const { classes } = useStyles();
   //
+  const navigate = useNavigate();
+
   return (
     <>
       {/* banner */}
