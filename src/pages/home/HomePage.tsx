@@ -25,7 +25,8 @@ import { ProductCard } from "../../components/ProductCard";
 import pas_chu_z from "../../assets/images/pas_chu_z.svg";
 import pas_dong_tien from "../../assets/images/pas_dong_tien.svg";
 import pas_chu_m from "../../assets/images/pas_chu_m.svg";
-import pas_chu_l from "../../assets/images/pas_chu_L.svg";
+import banner from "../../assets/images/Banner.svg";
+import { phoneNumber } from "../../shared";
 
 const useStyles = createStyles((theme) => ({
   banner: {
@@ -135,53 +136,8 @@ const HomePage = () => {
           loop={true}
           plugins={[autoplay.current]}
         >
-          <Carousel.Slide
-            sx={{
-              backgroundColor: "black",
-              display: "flex",
-            }}
-          >
-            <div
-              style={{
-                width: "100%",
-                height: "500px",
-              }}
-              about="asdas"
-            >
-              ádasdadsda
-            </div>
-          </Carousel.Slide>
-          <Carousel.Slide
-            sx={{
-              backgroundColor: "yellow",
-              display: "flex",
-            }}
-          >
-            <div
-              style={{
-                width: "100%",
-                height: "500px",
-              }}
-              about="asdas"
-            >
-              This is a sketch
-            </div>
-          </Carousel.Slide>
-          <Carousel.Slide
-            sx={{
-              backgroundColor: "red",
-              display: "flex",
-            }}
-          >
-            <div
-              style={{
-                width: "100%",
-                height: "500px",
-              }}
-              about="asdas"
-            >
-              This is a sketch
-            </div>
+          <Carousel.Slide>
+            <Image src={banner} />
           </Carousel.Slide>
           {/* ...other slides */}
         </Carousel>
@@ -207,67 +163,35 @@ const HomePage = () => {
         </NavLink>
       </Container>
 
-      {/* Categories */}
-      <Container size="xl" className={classes.container__py}>
-        <SectionHeading isCenter={true} content="Danh mục sản phẩm" />
-        <Grid>
-          {categories.map((el, index) => (
-            // <Grid.Col key={el.title + index} offsetMd={index === 0 ? 2.25 : 0} xs={12} sm={4} md={2.5}>
-            <Grid.Col
-              key={el.title + index}
-              offsetMd={index === 0 ? 1.5 : 0}
-              offsetLg={index === 0 ? 2.25 : 0}
-              xs={12}
-              sm={4}
-              md={3}
-              lg={2.5}
-            >
-              <Card withBorder>
-                {/* Card.Section chỉ nên dùng để chứa image sẽ hợp lí hơn
-                Vì nó không có padding/margin */}
-                <Card.Section>
-                  <Image src={el.url} height={rem(120)} />
-                </Card.Section>
-                {/* <Group position="apart">
-                  <span>đay là bên trái</span>
-                  <span>đây là bên phải</span>
-                </Group>
-                <Text>Thời gian ơi xin hãy, làm tuyết rơi</Text>
-                <Text>Xin lỗi cơn mưa vừa qua</Text> */}
-                <Text fz="md" fw="bold">
-                  {el.title}
-                </Text>
-                <Text>{el.description}</Text>
-              </Card>
-            </Grid.Col>
-          ))}
-        </Grid>
-      </Container>
-
       {/* Hot products */}
       <Container size="xl" className={classes.container__py}>
-        <SectionHeading isCenter={true} content="Sản phẩm bán chạy" />
+        <SectionHeading isCenter={true} content="Sản phẩm của chúng tôi" />
         <Grid>
           <Grid.Col sm={6} md={4} lg={3}>
             <ProductCard
               title="Eke máy lạnh"
               alt="Eke-may-lanh"
               image="https://cdn.tgdd.vn/Products/Images/9538/234421/gia-do-cuc-nong-eke-45cminox-304ad-1-org.jpg"
-              contact="0349799358"
-              // fromPrice="51,000đ"
-              // toPrice="90,000đ"
+              contact={phoneNumber}
               badges={["1 HP", "1.5 HP", "2 HP", "2.5 HP"]}
             />
           </Grid.Col>
           <Grid.Col sm={6} md={4} lg={3}>
             <ProductCard
-              title="Pas sắt các loại"
+              title="Pát sắt"
               alt="pas-sat"
               image={pas_chu_m}
-              contact="0349799358"
-              // fromPrice="51,000đ"
-              // toPrice="90,000đ"
-              badges={["Chữ M", "Chữ Z", "60x5/16", "Chữ L"]}
+              contact={phoneNumber}
+              badges={["Chữ M", "Chữ Z", "Chữ L"]}
+            />
+          </Grid.Col>
+          <Grid.Col sm={6} md={4} lg={3}>
+            <ProductCard
+              title="Pát đồng tiền"
+              alt="pas-dong-tien"
+              image={pas_dong_tien}
+              contact={phoneNumber}
+              badges={["60x5/16", "7.5mm", "8.5mm"]}
             />
           </Grid.Col>
         </Grid>
