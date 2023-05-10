@@ -86,11 +86,14 @@ export const products: Product[] = [
       "https://th.bing.com/th/id/R.b85e773bcecc9e839a870ad2892fd11f?rik=Hzy4pwghqq7Idw&riu=http%3a%2f%2fpapers.co%2fwallpaper%2fpapers.co-mt32-full-of-water-sea-dark-bw-deep-ocean-36-3840x2400-4k-wallpaper.jpg&ehk=xfZ3IYn9iiV2RAV1XvVa50OXuDbCyGBMziGUuadU1Do%3d&risl=&pid=ImgRaw&r=0",
     ],
     categoryName: "Máy Biến Áp",
+    categoryId: 2,
     status: "Còn hàng",
     composition: "Chưa xác định",
     country: "Chưa xác định",
     brand: "Chưa xác định",
-    discription: "",
+    description: "",
+    price: 800000,
+    discount: 10
   },
   {
     id: 1,
@@ -102,11 +105,14 @@ export const products: Product[] = [
       "https://th.bing.com/th/id/R.b85e773bcecc9e839a870ad2892fd11f?rik=Hzy4pwghqq7Idw&riu=http%3a%2f%2fpapers.co%2fwallpaper%2fpapers.co-mt32-full-of-water-sea-dark-bw-deep-ocean-36-3840x2400-4k-wallpaper.jpg&ehk=xfZ3IYn9iiV2RAV1XvVa50OXuDbCyGBMziGUuadU1Do%3d&risl=&pid=ImgRaw&r=0",
     ],
     categoryName: "Máy Biến Áp",
+    categoryId: 2,
     status: "Còn hàng",
     composition: "Chưa xác định",
     country: "Chưa xác định",
     brand: "Chưa xác định",
-    discription: "",
+    description: "",
+    price: 800000,
+    discount: 10
   },
   {
     id: 2,
@@ -118,11 +124,14 @@ export const products: Product[] = [
       "https://th.bing.com/th/id/R.b85e773bcecc9e839a870ad2892fd11f?rik=Hzy4pwghqq7Idw&riu=http%3a%2f%2fpapers.co%2fwallpaper%2fpapers.co-mt32-full-of-water-sea-dark-bw-deep-ocean-36-3840x2400-4k-wallpaper.jpg&ehk=xfZ3IYn9iiV2RAV1XvVa50OXuDbCyGBMziGUuadU1Do%3d&risl=&pid=ImgRaw&r=0",
     ],
     categoryName: "Máy Biến Áp",
+    categoryId: 2,
     status: "Còn hàng",
     composition: "Chưa xác định",
     country: "Chưa xác định",
     brand: "Chưa xác định",
-    discription: "",
+    description: "",
+    price: 800000,
+    discount: 10
   },
   {
     id: 3,
@@ -134,23 +143,48 @@ export const products: Product[] = [
       "https://th.bing.com/th/id/R.b85e773bcecc9e839a870ad2892fd11f?rik=Hzy4pwghqq7Idw&riu=http%3a%2f%2fpapers.co%2fwallpaper%2fpapers.co-mt32-full-of-water-sea-dark-bw-deep-ocean-36-3840x2400-4k-wallpaper.jpg&ehk=xfZ3IYn9iiV2RAV1XvVa50OXuDbCyGBMziGUuadU1Do%3d&risl=&pid=ImgRaw&r=0",
     ],
     categoryName: "Máy Biến Áp",
+    categoryId: 2,
     status: "Còn hàng",
     composition: "Chưa xác định",
     country: "Chưa xác định",
     brand: "Chưa xác định",
-    discription: "",
+    description: "",
+    price: 800000,
+    discount: 10
+  },
+  {
+    id: 4,
+    name: "Máy Biến Áp Dành Cho Máy Lạnh Nội Địa",
+    imgURL: [
+      "https://www.offidocs.com/images/oceancovesea.jpg",
+      "https://th.bing.com/th/id/R.d6e89700bd802623f844207797645fd7?rik=lRrGB9T7YPdizw&pid=ImgRaw&r=0",
+      "https://i.redd.it/vfmw47mzc6g21.jpg",
+      "https://th.bing.com/th/id/R.b85e773bcecc9e839a870ad2892fd11f?rik=Hzy4pwghqq7Idw&riu=http%3a%2f%2fpapers.co%2fwallpaper%2fpapers.co-mt32-full-of-water-sea-dark-bw-deep-ocean-36-3840x2400-4k-wallpaper.jpg&ehk=xfZ3IYn9iiV2RAV1XvVa50OXuDbCyGBMziGUuadU1Do%3d&risl=&pid=ImgRaw&r=0",
+    ],
+    categoryName: "Máy Biến Áp",
+    categoryId: 2,
+    status: "Còn hàng",
+    composition: "Chưa xác định",
+    country: "Chưa xác định",
+    brand: "Chưa xác định",
+    description: "",
+    price: 800000,
+    discount: 10
   },
 ];
-type Product = {
+export type Product = {
   id: number;
   name: string;
   imgURL: string[];
   categoryName: string;
+  categoryId: number;
   status: string;
   composition: string;
   country: string;
   brand: string;
-  discription: string;
+  description: string;
+  price: number,
+  discount: number
 };
 
 const ProductDetailPage = () => {
@@ -222,7 +256,7 @@ const ProductDetailPage = () => {
               {product?.imgURL.map((el, idx) => (
                 <Carousel.Slide>
                   <Avatar
-                    key={el.slice(0, 10) + idx}
+                    key={idx}
                     src={el}
                     size={width / 5}
                     radius="sm"
@@ -326,12 +360,8 @@ const ProductDetailPage = () => {
           </Grid.Col>
           <Grid.Col>
             <Group className={classes.related_products}>
-              {products.map((el, idx) => (
-                <ProductCard
-                  width={width / 2 - 14}
-                  {...el}
-                  key={el.name + idx}
-                />
+              {products.map((el) => (
+                <ProductCard width={width / 2 - 14} {...el} />
               ))}
             </Group>
           </Grid.Col>

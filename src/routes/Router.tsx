@@ -7,7 +7,7 @@ import App from "../App";
 import { CategoriesPage } from "../pages/categories/CategoriesPage";
 import { ServicesPage } from "../pages/services/ServicesPage";
 import ProductDetailPage from "../pages/product-detail/ProductDetailPage";
-import ProductsPage from "../pages/products/ProducstPage";
+import ProductsPage from "../pages/products/ProductsPage";
 
 const router = createBrowserRouter([
   {
