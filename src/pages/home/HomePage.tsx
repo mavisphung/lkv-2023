@@ -13,7 +13,10 @@ import {
 } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { NavLink, useNavigate } from "react-router-dom";
+import {
+  NavLink,
+  // useNavigate
+} from "react-router-dom";
 import AppRoutes from "../../routes/Routes";
 import SectionHeading from "../../components/utilities/SectionHeading";
 import { ProductCard } from "../../components/ProductCard";

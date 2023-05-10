@@ -3,13 +3,13 @@ import "./Footer.css";
 import * as React from "react";
 import {
   myContacts,
-  myFooterContent,
+  // myFooterContent,
   myMisions,
   myTabs,
   myWorkingHours,
 } from "../../shared";
 import { Link } from "react-router-dom";
-import { TabElement } from "../../shared/types";
+// import { TabElement } from "../../shared/types";
 import AppRoutes from "../../routes/Routes";
 
 const useStyles = createStyles((theme) => ({
