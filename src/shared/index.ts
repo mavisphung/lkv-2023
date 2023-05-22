@@ -76,3 +76,7 @@ export const myBreadcrumbs: BreadcrumbItem[] = [
 ];
 
 export const phoneNumber: string = "0909381333";
+export const shortName: string = "Long Khánh Vinh";
+export const shortName2: string = "LKV";
+export const fullName: string = "Cơ sở sản xuất và gia công phụ kiện ngành gỗ Long Khánh Vinh";
+export const address: string = "878/13 Hương Lộ 2, P. Bình Trị Đông A, Q. Bình Tân, Tp. Hồ Chí Minh";
