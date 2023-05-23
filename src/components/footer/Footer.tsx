@@ -178,7 +178,7 @@ const Footer = () => {
             ))}
           </Grid.Col>
           <Grid.Col sm={6} xl={3} pt={rem(56)} className={classes.otherElement}>
-            <Text className={`${classes.title}`}>Giờ làm việc</Text>
+            <Text className={`${classes.title}`}>Thông tin liên lạc</Text>
             {myContacts.map((el, index) => (
               <Text key={el + index}>{el}</Text>
             ))}

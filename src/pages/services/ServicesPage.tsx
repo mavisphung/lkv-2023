@@ -15,7 +15,7 @@ import {
 import { useEffect, useState } from "react";
 import AppRoutes from "../../routes/Routes";
 import { BreadcrumbItem } from "../../shared/types";
-import { myBreadcrumbs } from "../../shared";
+import { address, myBreadcrumbs, phoneNumber, videoLink } from "../../shared";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import {
@@ -28,6 +28,7 @@ import {
   IconShoppingCartPlus,
   IconTruckDelivery,
 } from "@tabler/icons-react";
+import { Helmet } from "react-helmet";
 
 const useStyles = createStyles((theme) => ({
   content__section: {
@@ -56,6 +57,9 @@ export const ServicesPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Dịch vụ - LKV</title>
+      </Helmet>
       <Container size="xl">
         {/* Breadcrumbs */}
         <Breadcrumbs mt="xs">
@@ -71,10 +75,8 @@ export const ServicesPage = () => {
         {/* Content */}
         <Grid className={classes.content__section}>
           <Grid.Col xs={12} offsetMd={3} md={6}>
-            <ReactPlayer width="auto" url="https://youtu.be/e6oyMO6mT60" />
-            <Text ta="center">
-              Chi nhánh: 218 Hồng Bàng, Phường 12, Quận 5, Tp. Hồ Chí Minh
-            </Text>
+            <ReactPlayer width="auto" url={videoLink} />
+            <Text ta="center">Chi nhánh: {address}</Text>
           </Grid.Col>
         </Grid>
         <Grid className={classes.content__section}>
@@ -141,7 +143,7 @@ export const ServicesPage = () => {
                 <Button color="#1864a">Liên hệ</Button>
               </Group>
               <Title order={4}>Bước 1</Title>
-              <Text>Liên hệ: 0395833593</Text>
+              <Text>Liên hệ: {phoneNumber}</Text>
             </Card>
           </Grid.Col>
           <Grid.Col md={3}>

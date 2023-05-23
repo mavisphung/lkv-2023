@@ -1,6 +1,13 @@
 import AppRoutes from "../routes/Routes";
 import { BreadcrumbItem, FooterElement, TabElement } from "./types";
 
+export const phoneNumber: string = "0909381333";
+export const shortName: string = "Long Khánh Vinh";
+export const shortName2: string = "LKV";
+export const fullName: string = "Cơ sở sản xuất và gia công phụ kiện ngành gỗ Long Khánh Vinh";
+export const address: string = "878/13 Hương Lộ 2, P. Bình Trị Đông A, Q. Bình Tân, Tp. Hồ Chí Minh";
+export const videoLink: string = "https://youtu.be/fY7SjnLNW3Y";
+
 export const myTabs: TabElement[] = [
   {
     name: "Trang chủ",
@@ -40,9 +47,8 @@ export const myWorkingHours : string[] = [
 ];
 
 export const myContacts: string[] = [
-  "0908 779 519",
-  "nguyenhoangkimlong2013@gmail.com",
-  "17/7 Ấp Xuân Thới Đông 1, Xuân Thới Đông. Hóc Môn, Tp Hồ Chí Minh"
+  phoneNumber,
+  address,
 ];
 
 export const myFooterContent: FooterElement[] = [
@@ -74,9 +80,3 @@ export const myBreadcrumbs: BreadcrumbItem[] = [
     href: AppRoutes.home,
   }
 ];
-
-export const phoneNumber: string = "0909381333";
-export const shortName: string = "Long Khánh Vinh";
-export const shortName2: string = "LKV";
-export const fullName: string = "Cơ sở sản xuất và gia công phụ kiện ngành gỗ Long Khánh Vinh";
-export const address: string = "878/13 Hương Lộ 2, P. Bình Trị Đông A, Q. Bình Tân, Tp. Hồ Chí Minh";

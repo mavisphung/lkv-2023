@@ -5,13 +5,11 @@ import {
   Burger,
   Container,
   rem,
-  Button,
   Transition,
   Paper,
   Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { myTabs } from "../../shared";
@@ -181,12 +179,12 @@ export function Header() {
             {headerComponents}
           </Group>
 
-          <Button
+          {/* <Button
             className={classes.btn}
             rightIcon={
               <IconSearch className={classes.icon} size="1.05rem" stroke={2} />
             }
-          />
+          /> */}
 
           <Burger
             opened={opened}

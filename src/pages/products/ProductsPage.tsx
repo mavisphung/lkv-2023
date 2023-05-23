@@ -79,7 +79,7 @@ const ProductsPage = () => {
   const autoplay = React.useRef(Autoplay({ delay: 10 * 1000, jump: true }));
   const { ref, width, height } = useElementSize();
   const theme = useMantineTheme();
-  let mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  // let mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
     <>
       <Container size="xl" ref={ref}>

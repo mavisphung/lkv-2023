@@ -14,6 +14,7 @@ import pas_chu_z from "../../assets/images/pas_chu_z.svg";
 import pas_dong_tien from "../../assets/images/pas_dong_tien.svg";
 import pas_chu_m from "../../assets/images/pas_chu_m.svg";
 import pas_chu_l from "../../assets/images/pas_chu_L.svg";
+import { Helmet } from "react-helmet";
 
 // const CONTENT_PADDING = rem(56);
 
@@ -78,6 +79,9 @@ const AboutPage = () => {
 
   return (
     <Container size="xl">
+      <Helmet>
+        <title>Giới thiệu - LKV</title>
+      </Helmet>
       {/* Section 1 */}
       <Grid pt="0" className={`${classes.section__container}`}>
         <Grid.Col

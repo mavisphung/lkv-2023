@@ -25,6 +25,7 @@ import pas_dong_tien from "../../assets/images/pas_dong_tien.svg";
 import pas_chu_m from "../../assets/images/pas_chu_m.svg";
 import banner from "../../assets/images/Banner.svg";
 import { phoneNumber } from "../../shared";
+import { Helmet } from "react-helmet";
 
 const useStyles = createStyles((theme) => ({
   banner: {
@@ -128,6 +129,10 @@ const HomePage = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Trang chủ - LKV</title>
+      </Helmet>
       {/* banner */}
       <Container size="xl" className={classes.banner}>
         <Carousel
