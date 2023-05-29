@@ -189,6 +189,7 @@ export function Header() {
           <Burger
             opened={opened}
             onClick={toggle}
+            ml="auto"
             className={classes.burger}
             size="sm"
           />
